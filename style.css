@@ -1,0 +1,716 @@
+
+body{
+    color: white;
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+    background-color: rgba(36, 31, 31, 0.644);
+    width: 100%;
+    height: 100vh;
+    background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('images/1.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: ubuntu;
+}
+::-webkit-scrollbar{
+    display: none;
+    }
+*{
+    user-select: none;
+    color: white;
+    text-decoration: none;
+    list-style: none;
+}
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background-size:cover;
+    background-position: center;
+    background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/writing-923882_1280.jpg');
+    background-position: bottom;
+    background-size:cover;
+    margin:0 auto;
+    height: 70vh;
+    overflow: scroll;
+}
+.mainContainer .mainContainerChildren{
+    margin: 1px 0px;
+    border-bottom: 1px solid #c4c5c182;
+    position: relative;
+    height: 80px;
+    width: 100%;
+    cursor: pointer;
+    z-index: 9999;
+    transition: .7s ease-in-out;
+    overflow: hidden;
+}
+.mainContainer .mainContainerChildren:hover{
+    border-bottom: 1.3px solid #d0d2d982;
+    background: #00000042;
+}
+.mainContainerChildrenNav{
+    margin: 7px;
+    background-color:rgb(0 0 0 / 15%);
+    position: relative;
+    height: 100px;
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.mainContainerChildrenNav h1{
+text-align: center;
+font-family: Grandstander;
+font-size: 21px;
+}
+.mainContainer .mainContainerChildren p{
+    pointer-events: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family:Annie Use Your Telescope;
+    font-size: 20px;
+}
+.h1, h1 {
+    font-size: calc(1rem + 1vw) !important;
+}
+.secondHeading{
+    text-align: center;
+    color: rgb(194, 139, 139);
+    background-color:#3b03031f;
+    width: 80%;
+    margin: 0 auto 0px auto;
+    font-family: Grandstander;
+}
+.mainContainer .mainContainerChildren .timeDates{
+    position: absolute;
+    bottom: 0;
+    pointer-events: none;
+    right: 0;
+    font-size: 13px;
+    box-shadow: -1px -2px 10px -7px white;
+    background: transparent;
+    color: #898181;
+}
+#searchNotes{
+    background: transparent;
+    border: 1px solid;
+    border-radius: 15px;
+    height: 20px;
+    text-align: center;
+    width: 20%;
+}
+.mainContainer .mainContainerChildren h1{
+    z-index: 0;
+    pointer-events: none;
+    margin: 9px auto 0 auto;
+    padding: 0;
+    text-align: center;
+    color: #b8bfee;
+    font-family: Delius;
+}
+.leftRight{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 16px;
+}
+.leftRight img{
+  width: 30px;
+  cursor: pointer;
+
+}
+/* NoteView */
+.notePreview{
+    font-family: Annie Use Your Telescope;
+    font-size: 16px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #808285;
+}
+#newBtn{
+    cursor: pointer;
+    width: 90px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    border: none;
+    background: #59595996;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px 0px;
+    margin: 12px 0 15px 0;
+    font-size: 16px;
+    transition: .2s ease-in-out;
+    bottom: 0;
+}
+#newBtn:hover{
+    background: #33323296;
+    box-shadow: 0px 0px 4px 0px;
+}
+.newNotes{
+ flex-direction: column;
+ margin: 9px 0;
+display: none;
+width: 80%;
+margin: 0 auto;
+position: absolute;
+top: 141px;
+transition: .7s ease-in-out;
+left: 50%;
+transform: translateY(0%) translateX(-50%)
+}
+.newNotes #title{
+    margin: 0 0 0px 0;
+    font-size: 24px;
+    color: white;
+    background: #42424238;
+    text-align: center;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+}
+.newNotes #textBox{
+ margin:0 0 4px 0;
+ background-color:rgba(255, 255, 255, 0.486);
+ font-size: 26px;
+ height: 60vh;
+ background: transparent;
+ border: 1px solid #979797;
+ margin: 12px 0 0 0;
+ text-align: center;
+ border-radius: 15px;
+ 
+}
+#more{
+    /* position: absolute; */
+    right: 0;
+}
+/* OPTION OF RIGHT SIDE  */
+#optionsContainer {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: absolute;
+    right: 0px;
+    top: 100px;
+}
+.option {
+    flex: 1;
+    padding: 10px;
+    transform: translateX(100%);
+    transition: transform 0.3s;
+    box-shadow: 3px 2px 3px 0px white;
+    color: #7b7b78;
+    padding: 8px 0 8px 0;
+cursor: pointer;
+display: flex;
+}
+.option:hover{
+    box-shadow: 3px 2px 6px 0px #505118;
+    color: #bdbdbd;
+}
+.optionToggle{
+    transform: translateX(0%);
+    z-index: 999999999999999999999;
+}
+.rotate45Deg{
+    transform: rotate(45deg);
+}
+.op17per{
+    opacity: 17% !important;
+}
+.deleteNotes{
+    width: 30px;
+    position: absolute;
+    right: 12%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.alertTop{
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: green;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: .4s ease-in-out;
+}
+.emptyAlert{
+    text-align: center;
+    color: grey;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family: Grandstander;
+    transform: translateX(-50%)
+}
+#optionsContainer div img{
+    width: 29px;   
+     padding: 0 5px 0 0;
+}
+.toggleGrid{
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0 7px;
+}
+.columnRevserse{
+    flex-direction: column-reverse;
+    direction: rtl;
+}
+/* Setttings Style  */
+.themes{
+    margin: 0 5px 0 5px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.themes img{
+    width: 100%;
+    transition: transform 0.4s ease;
+}
+.themes img:hover{
+transform: scale(1.2);
+}
+.themes button{
+text-align: center;
+cursor: pointer;
+}
+.themes button {
+    margin: 0 auto;
+    display: block;
+}
+.themesParen{
+     display: flex;
+}
+.themes button {
+    margin: 0 auto;
+    display: block;
+    background: transparent;
+    color: white;
+    border: 1px splid;
+    border: 1px solid;
+    padding: 2px 21px;
+    border-radius: 14px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 17px;
+    transition: .3s ease-in-out;
+}
+.themes button:hover{
+    border-color: transparent;
+    background-color: green;
+
+}
+.settingsParentDiv{
+    background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('images/2.jpg');
+    margin: 0 auto;
+    width: 80%;
+    transform: translateY(-95%);
+    transition: .5s ease-in-out;
+}
+summary{
+    text-align: center;
+    font-weight: 800;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+summary:hover{
+    color:green;
+    user-select: none;
+}
+.settingOptionsBellowThemes{
+    display: flex;
+    flex-direction: column;
+    gap: 0 1px;
+    position: relative;
+}
+.imageAndBtn button{
+    background:transparent;
+    border: none;
+    cursor: pointer;
+}
+.settingOptionsBellowThemes img{
+    width: 20px;
+}
+.imageAndBtn{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.imageAndBtn, .setColor{
+    background: transparent;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 4px 14px;
+    margin: 8px auto;
+    border-radius: 12px;
+    box-shadow: 0px 0px 5px -1px white;
+}
+.setColor{
+    display: flex;
+ gap: 0 2px;
+    justify-content: center;
+    align-items: center;
+}
+.hrCenterTransform{
+    transform: translateY(-145%) translateX(-50%)
+}
+.deleteAllNotes{
+    transition: .3s ease-in-out;
+    background: rgba(255, 0, 0, 0);
+border: 1px solid red;
+box-shadow:none;
+}
+.deleteAllNotes button{
+   color: red;
+}
+.deleteAllNotes:hover{
+   border-color: transparent;
+    background: red;
+    box-shadow:none;
+}
+.deleteAllNotes button:hover{
+    color: rgb(255, 255, 255);
+}
+.detainses{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.messageContainer{
+    text-align: center;
+    background:green;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 189px;
+    width: max-content;
+    padding: 12px 16px;
+    border-radius: 15px;
+    z-index: 99;
+    transition: .4s ease-in-out;
+
+}
+/* --------- */
+/* Dlete btn  */
+.deleteConfirm, .defaultConfirm{
+    margin: 0 auto;
+    display: none;
+    margin-bottom: 15px;
+}
+.deleteConfirm h4, .defaultConfirm h4{
+color: red;
+}
+.deleteConfirm .delBtn, .defaultConfirm .deflBtn{
+    display: flex;
+    justify-content: center;
+    gap: 0 37px;
+}
+.deleteConfirm .delBtn button, .defaultConfirm .deflBtn button{
+    border: none;
+    padding: 2px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+#notDele, #deflNo{
+    background-color: red;
+}
+#dele, #deflYes{
+    background-color: green;
+}
+/* ------------------ */
+/* alert above  */
+.alert-dark{
+    transform: translateY(0%);
+    transition: transform 0.3s;
+    position: absolute;
+    width: 100%;
+    z-index: 999999999999999999999999999999999999999999999999999999999999999999999999;
+}
+.displayNone{
+    display: none;
+}
+.top0Left50{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.translateX{
+    transform: translateX(900%);
+    transition: transform 0.6s;
+}
+
+/* RecycleBin  */
+.binContainer{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgb(30 24 24 / 22%);
+    transition: 0.6s ease-in-out;
+}
+.transform0{
+    transform: translateX(0%);
+}
+.transformY0{
+    transform: translateY(0%);
+}
+.binContainer button {
+    background: red;
+    outline: 0;
+    border: 0;
+    position: absolute;
+    bottom: 2px;
+    transform: translateX(-50%);
+    left: 50%;
+    padding: 3px 13px;
+    border-radius: 12px;
+}
+.binContainer .mainContainerChildren .deleteNotes{
+    cursor: pointer;
+}
+.binContainer .mainContainerChildren .deleteNotes{
+    /* display: none; */
+} 
+.binContainer .mainContainerChildren{
+    text-align: center;
+    border: 1px solid #636865a6;
+    position: relative;
+    line-height: .7;
+    margin: 2px 0 0 2px;
+}
+.binContainer .binEmptyMessage{
+    text-align: center;
+    padding-top: 86px;
+}
+.binContainer .mainContainerChildren img{
+width: 80px;
+transition: .3s ease-in-out;
+}
+.binContainer .mainContainerChildren img:hover{
+opacity: 70%;
+}
+.binContainer .timeDates{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+/* -------------------------------- */
+
+/* CHANGE FONT COLOR  */
+.changeFontColor{
+    position: absolute;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+text-align: center;
+line-height: 0;
+width: 100%;
+background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('images/vintage-2168174_1920.jpg');
+background-size: contain;
+    background-position: center;
+    transition: .5s ease-in-out;
+}
+.translateY-200{
+    transform: translateY(-700%);
+}
+.translateY-244{
+    transform: translateY(-544%);
+}
+.translateY-704{
+    transform: translateY(-750%);
+}
+.translateY-231{
+    transform: translateY(-631%);
+}
+.changeFontColor .changeFontColorChildChildren input{
+    height: 17px;
+    width: 15%;
+background-color: transparent;
+    border-radius: 9px;
+    border: none;
+}
+/* --------------------------------------------------- */
+/* Chnage font style  */
+.changeFont{
+    position: absolute;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+text-align: center;
+line-height: 0;
+width: 100%;
+background:linear-gradient(rgba(158, 72, 72, 0.7), rgba(0, 0, 0, 0.9)), url('images/vintage-2168174_1920.jpg');
+background-size: contain;
+    background-position: center;
+    transition: .5s ease-in-out;
+}
+
+.fontSelector{
+        background-color: rgba(44, 43, 43, 0.03);
+    transition: 1s ease-in-out;
+        color: #97a1a1; 
+        border-radius: 10px;
+        text-align: center;
+        font-weight: 700;
+}
+option{
+    background-color: rgb(53, 50, 50);
+}
+.noHeight{
+    height: 0px;
+    border: none;
+}
+/* Lock Notes  */
+.lockNotesParentDiv{
+    height: 100%;
+    width: 100%;
+    background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('images/vintage-2168174_1920.jpg');
+backdrop-filter: blur(8px); /* Adjust the blur amount as needed */
+background-color: rgba(255, 255, 255, 0.5); /* Adjust the background color and opacity as needed */
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: .5s ease-in-out;
+}
+.lock{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    min-width: 40%;
+}
+.lock h3{
+        text-align: center;
+        margin: 2px;
+        padding: 13px 23px;
+        box-shadow: 0px 1px 5px 1px black;
+        border-radius: 52%;
+        cursor: pointer;
+        transition: .3s ease-in-out;
+}
+.lock h2{
+    margin: 2px;
+    padding: 11px 21px;
+    box-shadow: 0px 1px 5px 1px black;
+    border-radius: 52%;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+    background: repeating-radial-gradient(#f9131336, #ff000029 100px);
+    color: red;
+}
+.lock h2:hover{
+    background: repeating-radial-gradient(#f91313bf, #120606 100px);
+    color: white;
+}
+.lock h3:hover{
+        box-shadow: 0px 2px 5px 3px black;
+        color: #9c9c9a;
+}
+.inPutBox{
+    padding-bottom: 19px;
+    padding-top: 11px;
+}
+.inPutBox input{
+    background: transparent;
+    border: 1px solid wheat;
+    color: red;
+    font-size: 27px;
+    text-align: center;
+    border: none;
+    border-bottom: 3px solid #ffe6e640;
+    cursor: not-allowed; 
+    pointer-events: none; 
+}
+.passwordSet{
+    padding-top: 20px;
+    margin-bottom: 8px;
+}
+.passwordSet button{
+    padding-top: 22px;
+    background: #056d0852;
+    padding: 9px 38px;
+    outline: none;
+    border-radius: 22px;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 1px rgb(255, 255, 255);
+    transition: .2s ease-in-out;
+    border: none;
+    font-size: 17px;
+}
+.passwordSet button:hover{
+    padding: 9px 42px;
+    box-shadow: 0px 0px 5px 1px green;
+    background: #008f04c4;
+}
+.warnings{
+    position: absolute;
+    top: 29%;
+    background: #3f4d4d;
+    padding: 16px 33px;
+    border-radius: 12px;
+}
+.warnings h2{
+    text-align: center;
+    font-size: 21px;
+}
+@keyframes slideInDelete {
+    0%{
+        transform: translateY(300%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+@keyframes slideInThemes {
+    0%{
+        transform: translateY(-300%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+@media(max-width:800px){
+    .mainContainer {
+        width: 100%;
+    }
+    #newNotes #textBox {
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+    }
+    .newNotes {
+        width: 100%;
+        margin-top: 20px;
+    }}
+@media(max-width:700px){
+    .themesParen {
+        FLEX-DIRECTION: column;
+    }
+    .themes {
+        margin:5px 0;
+    }
+}
